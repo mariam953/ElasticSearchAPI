@@ -1,0 +1,96 @@
+2020-06-23 13:48:41,252 [WARNING] root:163 - Unrecognized option: replSet
+2020-06-23 13:48:41,599 [ALWAYS] mongo_connector.connector:50 - Starting mongo-connector version: 3.1.1
+2020-06-23 13:48:41,599 [ALWAYS] mongo_connector.connector:50 - Python version: 3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 23:03:10) [MSC v.1916 64 bit (AMD64)]
+2020-06-23 13:48:41,599 [ALWAYS] mongo_connector.connector:50 - Platform: Windows-10-10.0.18362-SP0
+2020-06-23 13:48:41,599 [ALWAYS] mongo_connector.connector:50 - pymongo version: 3.10.1
+2020-06-23 13:48:41,599 [WARNING] mongo_connector.connector:170 - MongoConnector: Can't find D:\Desktop\mariam mongodb+python tanger - Copy\ElasticSearch\oplog.timestamp, attempting to create an empty progress log
+2020-06-23 13:48:41,626 [ALWAYS] mongo_connector.connector:50 - Source MongoDB version: 4.2.5
+2020-06-23 13:48:41,626 [ALWAYS] mongo_connector.connector:50 - Target DocManager: mongo_connector.doc_managers.elastic2_doc_manager version: 1.0.0
+2020-06-23 13:48:41,626 [INFO] mongo_connector.connector:283 - MongoConnector: Empty oplog progress file.
+2020-06-23 13:48:41,719 [INFO] mongo_connector.oplog_manager:137 - OplogThread: Initializing oplog thread
+2020-06-23 13:48:41,726 [INFO] mongo_connector.connector:402 - MongoConnector: Starting connection thread MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=False, connect=True, replicaset='mongodb-replicaset')
+2020-06-23 13:48:41,736 [INFO] mongo_connector.oplog_manager:646 - Bulk upserting approximately 1 docs from collection 'forum.Blog'
+2020-06-23 13:48:42,457 [INFO] elasticsearch:61 - POST http://localhost:9200/_bulk [status:200 request:0.718s]
+2020-06-23 13:49:11,731 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:49:41,741 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:50:11,744 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:50:41,758 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:51:11,761 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:51:41,767 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:52:11,770 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:52:41,773 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:53:11,776 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:53:41,779 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:54:11,782 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:54:41,787 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:55:11,790 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:55:41,796 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:56:11,800 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:56:41,855 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:57:11,858 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:57:41,860 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:58:11,867 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:58:41,878 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:59:11,881 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 13:59:41,887 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:00:11,890 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:00:41,898 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:01:11,901 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:01:41,906 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:02:11,910 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:02:41,918 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:03:11,922 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:03:41,927 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:04:11,932 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:04:41,936 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:05:11,940 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:05:41,945 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:06:11,947 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:06:41,951 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:07:11,954 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:07:26,582 [INFO] elasticsearch:61 - POST http://localhost:9200/_bulk [status:200 request:0.069s]
+2020-06-23 14:07:41,957 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:08:11,960 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:08:41,964 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:09:11,968 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:09:41,971 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:10:11,974 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:10:41,985 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:11:11,989 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:11:41,995 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:12:11,998 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:12:42,003 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:13:12,014 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:13:42,020 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:14:12,024 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:14:42,028 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:15:12,034 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:15:42,037 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:16:12,041 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:16:42,044 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:17:12,050 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:17:42,054 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:18:12,057 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:18:42,060 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:19:12,064 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:19:42,067 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:20:12,071 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:20:42,075 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:21:12,078 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:21:42,082 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:22:12,085 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:22:42,089 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:23:12,092 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:23:42,096 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:24:12,100 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:24:42,104 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:25:12,107 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:25:42,111 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:26:12,114 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:26:42,119 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:27:12,122 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:27:42,125 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:28:12,151 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:28:42,159 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:29:12,162 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.
+2020-06-23 14:29:42,166 [INFO] mongo_connector.oplog_manager:76 - OplogThread for replica set 'mongodb-replicaset' is up to date with the oplog.

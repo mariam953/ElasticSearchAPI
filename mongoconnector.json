@@ -1,0 +1,12 @@
+{
+    "mainAddress": "localhost:27018",
+    "verbosity": 2,
+    "replSet":"mongodb-replicaset",
+    "continueOnError": false,    
+    "docManagers": [
+        {
+            "docManager": "elastic2_doc_manager",
+            "targetURL": "localhost:9200"
+        }
+    ]
+ }
