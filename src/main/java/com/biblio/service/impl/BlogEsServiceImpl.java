@@ -28,13 +28,17 @@ public class BlogEsServiceImpl implements BlogEsService {
     private BlogEsRepository blogRepository;
     
     @Override
+    public BlogEs save(BlogEs blog){
+        return blogRepository.save(blog);
+    }
+    
+    @Override
     public BlogEs findOne(String id) {
         
         Optional<BlogEs> b = blogRepository.findById(id);
         if(b.isPresent()) {
             return(b.get());
         } else {
-            // value is absent
             return(null);
         }	
     }
@@ -48,6 +52,10 @@ public class BlogEsServiceImpl implements BlogEsService {
     public Page<BlogEs> findByTitle(String title, PageRequest pageRequest) {
         return blogRepository.findByTitle(title, pageRequest);
     }
-   
+    
+    @Override
+    public void deleteById(String id){
+         blogRepository.deleteById(id);
+    }
     
 }

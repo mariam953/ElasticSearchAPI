@@ -23,7 +23,7 @@ public class MongoController {
     //private BlogRepository repository;
 
     @GetMapping("/blogs")
-    public HttpEntity<String> hello(){
+    public HttpEntity<String> findAll(){
         String resp = new String();
         
         for (Blog customer : blogService.findAll()) {
@@ -34,7 +34,7 @@ public class MongoController {
     }
     
     @GetMapping("/findbytitle/{title}")
-    public String hello0(@PathVariable("title") String title)
+    public String findByTitle(@PathVariable("title") String title)
     {
         Blog b = blogService.findBytitle(title);
         return b.toString();
@@ -53,18 +53,12 @@ public class MongoController {
         
     }
 
-    @RequestMapping(value = "/pojo", method = RequestMethod.POST)
+    @PutMapping(value = "/insert")
     public String insert(@Valid BlogCriteria Blogmodel)
     {
-        Blog b = new Blog(Blogmodel.getTitle(), Blogmodel.getText());
+        Blog b = new Blog(Blogmodel.getTitle(), Blogmodel.getBody());
         blogService.saveOrUpdateBlog(b);
         return "Hello " + Blogmodel.toString();
-    }
-
-    @PostMapping("/visualize/{sheetName}")
-    // TODO Implement Global error handling
-    public HttpEntity<String> viewSheetData(@RequestParam(name = "file") MultipartFile multipartFile, @PathVariable String sheetName) {
-        return ResponseEntity.ok("Post mapping works");
     }
     
     @DeleteMapping(value = "/delete/{id}")

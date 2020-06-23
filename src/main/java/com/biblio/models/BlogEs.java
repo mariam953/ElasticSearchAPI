@@ -6,7 +6,8 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
-@Document(indexName = "forum",indexStoreType="Blog", createIndex = false)
+@Document(indexName = "forum.blog",indexStoreType="_doc", createIndex = false)
+//@Document(indexName = "forum",indexStoreType="Blog", createIndex = false)
 public class BlogEs {
     @Id
     private String _id;

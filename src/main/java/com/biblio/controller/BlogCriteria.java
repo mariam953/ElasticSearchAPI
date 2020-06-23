@@ -9,7 +9,7 @@ class BlogCriteria {
  
    private int _id;
    private String title;
-   private String text;
+   private String body;
    
    BlogCriteria() {
    }
@@ -22,14 +22,13 @@ class BlogCriteria {
         this.title = title;
     }
 
-    public String getText() {
-        return text;
+    public String getBody() {
+        return body;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setBody(String body) {
+        this.body = body;
     }
-
     
     public int get_Id() {
         return _id;
@@ -41,7 +40,8 @@ class BlogCriteria {
 
     @Override
     public String toString() {
-        return "BlogCriteria{" + "_id=" + _id + ", title=" + title + ", text=" + text + '}';
+        return "BlogCriteria{" + "_id=" + _id + ", title=" + title + ", body=" + body + '}';
     }
+
     
 }

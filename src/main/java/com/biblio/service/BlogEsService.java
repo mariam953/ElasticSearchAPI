@@ -16,10 +16,9 @@ import org.springframework.stereotype.Service;
  * @author nafar
  */
 @Service
-public interface BlogEsService {
-    //Blog save(Blog blog);
-
-    //void delete(Blog blog);
+public interface BlogEsService{
+    
+    BlogEs save(BlogEs blog);
 
     BlogEs findOne(String id);
 
@@ -27,4 +26,7 @@ public interface BlogEsService {
 
 
     Page<BlogEs> findByTitle(String title, PageRequest pageRequest);
+    
+    void deleteById(String blog);
+
 }

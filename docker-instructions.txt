@@ -28,3 +28,5 @@ docker run -d --name elasticsearch5 -p 9200:9200 -p 9300:9300 --net my-mongo-clu
 docker rm -f mongoset1 mongoset2 mongoset3 elasticsearch5
 
 mongo-connector -c mongoconnector.json
+
+https://github.com/rwynn/monstache/releases
