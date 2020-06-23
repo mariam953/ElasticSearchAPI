@@ -1,9 +1,10 @@
 package com.biblio.service.impl;
 
 import com.biblio.models.Blog;
-import com.biblio.repository.BlogRepository;
-import com.service.BlogService;
+import com.biblio.repository.Mongo.BlogRepository;
+import com.biblio.service.BlogService;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +37,11 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public void deleteBlog(String id) {
         blogRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<Blog> findById(String id) {
+        return blogRepository.findById(id);        
     }
 
 }

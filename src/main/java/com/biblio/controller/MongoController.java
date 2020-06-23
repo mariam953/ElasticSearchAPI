@@ -1,19 +1,10 @@
 package com.biblio.controller;
 
 import com.biblio.models.Blog;
-import com.biblio.models.BlogEs;
-import com.biblio.repository.Es.BlogEsRepository;
-import com.biblio.service.BlogEsService;
 import com.biblio.service.BlogService;
-import java.util.List;
 import java.util.Optional;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,28 +12,24 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 @RestController
-@RequestMapping("/es")
-@CrossOrigin("*")
-public class ElasticSearchController {
+@RequestMapping("/mongo")
+@CrossOrigin("*") // TODO Add WebConfigurer filter for cross origin
+public class MongoController {
     
     @Autowired
     private BlogService blogService;
-   
-    @Autowired
-    private BlogEsService blogEsService;
    
     //@Autowired
     //private BlogRepository repository;
 
     @GetMapping("/blogs")
     public HttpEntity<String> hello(){
+        String resp = new String();
         
-        String resp=new String();
+        for (Blog customer : blogService.findAll()) {
+            resp+=customer;
+        }
         
-        List<BlogEs> blogs = (List<BlogEs>) blogEsService.findAll();
-        for (BlogEs customer : blogs) {
-                    resp+=customer;
-                }
         return ResponseEntity.ok(resp);
     }
     
