@@ -6,23 +6,18 @@ docker network create mongo-cluster-dev
 
 docker run -d --net mongo-cluster-dev -p 27017:27017 --name mongoset1 mongo mongod --replSet mongodb-replicaset
 docker run -d --net mongo-cluster-dev -p 27018:27017 --name mongoset2 mongo mongod --replSet mongodb-replicaset
-docker run -d --net mongo-cluster-dev -p 27019:27017 --name mongoset3 mongo mongod --replSet mongodb-replicaset
 
 docker exec -it mongoset1 mongo
 
 db = (new Mongo('localhost:27017')).getDB('forum')
-config={"_id":"mongodb-replicaset","members":[{"_id":0,"host":"mongoset1:27017"},{"_id":1,"host":"mongoset2:27017"},{"_id":2,"host":"mongoset3:27017"}]}
+config={"_id":"mongodb-replicaset","members":[{"_id":0,"host":"mongoset1:27017"},{"_id":1,"host":"mongoset2:27017"}]}
 rs.initiate(config)
 
 
 db2 = (new Mongo('mongoset2:27017')).getDB('forum')
 db2.setSlaveOk()
 
-db2 = (new Mongo('mongoset3:27017')).getDB('forum')
-db2.setSlaveOk()
-
-
-docker run -d --name elasticsearch5 -p 9200:9200 -p 9300:9300 --net my-mongo-cluster -e "discovery.type=single-node" -e "xpack.security.enabled=false" docker.elastic.co/elasticsearch/elasticsearch:5.5.0
+docker run -d --name elasticsearch77 -p 9200:9200 -p 9300:9300 --net mongo-cluster-dev -e "discovery.type=single-node" -e "xpack.security.enabled=false" docker.elastic.co/elasticsearch/elasticsearch:7.8.0
 
 #stop and remove 
 docker rm -f mongoset1 mongoset2 mongoset3 elasticsearch5

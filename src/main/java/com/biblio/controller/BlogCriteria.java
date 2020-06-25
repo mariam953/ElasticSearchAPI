@@ -7,7 +7,7 @@ package com.biblio.controller;
 
 class BlogCriteria {
  
-   private int _id;
+   private String id;
    private String title;
    private String body;
    
@@ -30,17 +30,17 @@ class BlogCriteria {
         this.body = body;
     }
     
-    public int get_Id() {
-        return _id;
+    public String getId() {
+        return id;
     }
 
-    public void set_Id(int _id) {
-        this._id = _id;
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override
     public String toString() {
-        return "BlogCriteria{" + "_id=" + _id + ", title=" + title + ", body=" + body + '}';
+        return "BlogCriteria{" + "id=" + id + ", title=" + title + ", body=" + body + '}';
     }
 
     
