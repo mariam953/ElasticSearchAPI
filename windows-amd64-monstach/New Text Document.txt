@@ -1,0 +1,24 @@
+input {
+mongodb {
+codec => “json”
+uri => ‘mongodb://localhost:27017/NewDb'
+placeholder_db_dir => ‘/home/devbrt.shukla/Desktop/scalaoutput/ELK/logstash-6.4.1/db_dir'
+placeholder_db_name => ‘Employee_sqlite.db'
+collection => ‘Employee'
+batch_size => 5000
+generateId => ‘true'
+parse_method => “simple”
+}
+}
+filter {
+mutate {
+remove_field => [ “_id” ]
+}
+}
+output {
+elasticsearch {
+hosts => [“localhost:9200”]
+index => “employee-%{+YYYY.MM.dd}”
+}
+stdout { codec => rubydebug }
+}

@@ -6,7 +6,7 @@
 package com.biblio.service;
 
 
-import com.biblio.models.BlogEs;
+import com.biblio.models.BookEs;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -16,17 +16,18 @@ import org.springframework.stereotype.Service;
  * @author nafar
  */
 @Service
-public interface BlogEsService{
+public interface BookEsService{
     
-    BlogEs save(BlogEs blog);
+    BookEs save(BookEs book);
 
-    BlogEs findOne(String id);
+    BookEs findOne(String id);
 
-    Iterable<BlogEs> findAll();
+    Iterable<BookEs> findAll();
 
 
-    Page<BlogEs> findByTitle(String title, PageRequest pageRequest);
+    Page<BookEs> findByTitle(String title, PageRequest pageRequest);
     
-    void deleteById(String blog);
+    Page<BookEs> findByIsbn(String isbn, PageRequest pageRequest);
+    
 
 }

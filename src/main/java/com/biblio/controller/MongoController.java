@@ -1,7 +1,7 @@
 package com.biblio.controller;
 
-import com.biblio.models.Blog;
-import com.biblio.service.BlogService;
+import com.biblio.models.Book;
+import com.biblio.service.BookService;
 import java.util.Optional;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,16 +17,16 @@ import org.springframework.web.multipart.MultipartFile;
 public class MongoController {
     
     @Autowired
-    private BlogService blogService;
+    private BookService bookService;
    
     //@Autowired
     //private BlogRepository repository;
 
-    @GetMapping("/blogs")
+    @GetMapping("/books")
     public HttpEntity<String> findAll(){
         String resp = new String();
         
-        for (Blog customer : blogService.findAll()) {
+        for (Book customer : bookService.findAll()) {
             resp+=customer;
         }
         
@@ -36,14 +36,14 @@ public class MongoController {
     @GetMapping("/findbytitle/{title}")
     public String findByTitle(@PathVariable("title") String title)
     {
-        Blog b = blogService.findBytitle(title);
+        Book b = bookService.findBytitle(title);
         return b.toString();
     }
     
     @GetMapping("/findbyid/{id}")
     public String findById(@PathVariable("id") String id)
     {
-        Optional<Blog> b = blogService.findById(id);
+        Optional<Book> b = bookService.findById(id);
         if(b.isPresent()) {
             return(b.toString());
         } else {
@@ -53,16 +53,17 @@ public class MongoController {
         
     }
 
-    @PutMapping(value = "/insert")
-    public String insert(@Valid BlogCriteria Blogmodel)
+    @PutMapping(value = "/addbook")
+    public String insert(@Valid BookCriteria book)
     {
-        Blog b = new Blog(Blogmodel.getTitle(), Blogmodel.getBody());
-        blogService.saveOrUpdateBlog(b);
-        return "Hello " + Blogmodel.toString();
+        Book b = new Book(book.getIsbn(), book.getTitle(), book.getPagenbr() );
+        //print(""+b.toString())
+        bookService.saveOrUpdateBook(b);
+        return "Hello " + book.toString();
     }
     
     @DeleteMapping(value = "/delete/{id}")
     public void deleteBlog(@PathVariable String id) {
-        blogService.deleteBlog(id);
+        bookService.deleteBook(id);
     }
 }

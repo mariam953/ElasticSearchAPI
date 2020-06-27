@@ -1,17 +1,13 @@
 package com.biblio.controller;
 
-import com.biblio.models.Blog;
-import com.biblio.models.BlogEs;
-import com.biblio.service.BlogEsService;
-import com.biblio.service.BlogService;
+import com.biblio.models.Book;
+import com.biblio.models.BookEs;
+import com.biblio.service.BookEsService;
+import com.biblio.service.BookService;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,25 +16,26 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin("*") // TODO Add WebConfigurer filter for cross origin
+@CrossOrigin("*")
+
 public class ApiController {
     
     @Autowired
-    private BlogEsService blogEsService;
+    private BookEsService bookEsService;
 
     @Autowired
-    private BlogService blogService;
+    private BookService bookService;
     
     @GetMapping("/getallbooks")
-    public List<BlogEs> findAll(){
+    public List<BookEs> findAll(){
         try {
-            Iterable<BlogEs> blogs = blogEsService.findAll();
-            List<BlogEs> BlogsList = new ArrayList<>();
-            for (BlogEs item : blogs) {
-                BlogsList.add(item);
+            Iterable<BookEs> books = bookEsService.findAll();
+            List<BookEs> BooksList = new ArrayList<>();
+            for (BookEs item : books) {
+                BooksList.add(item);
             }
 
-            return BlogsList;
+            return BooksList;
         } catch (Exception e) {
             return null;
         }
@@ -47,37 +44,43 @@ public class ApiController {
     @GetMapping("/findbookbyid/{id}")
     public String findById(@PathVariable("id") String id)
     {
-        BlogEs b = blogEsService.findOne(id);
+        BookEs b = bookEsService.findOne(id);
         if(b == null){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Blog with id "+id+" not found in ES cluster");	        
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Book with id "+id+" not found in ES cluster");	        
         }
         return b.toString();	
 
     }
     
-    @GetMapping("/findbookbytitle/{title}")
-    public HttpEntity<String> findByTitle(@PathVariable("title") String title)
+    @GetMapping("/findbookbyisbn/{isbn}")
+    public List<BookEs> findByIsbn(@PathVariable("isbn") String isbn)
     {
-        String resp=new String();
+        try {
+            Iterable<BookEs> books = bookEsService.findByIsbn(isbn, PageRequest.of(0, 5000));
+            List<BookEs> BooksList = new ArrayList<>();
+            for (BookEs item : books) {
+                BooksList.add(item);
+            }
+
+            return BooksList;
+        } catch (Exception e) {
+            return null;
+        }
         
-        Page<BlogEs> b = blogEsService.findByTitle(title, PageRequest.of(0, 5000));
-        List<BlogEs> listBlogs = b.getContent();
-        for (BlogEs customer : listBlogs) {
-                    resp+=customer;
-                }
-        return ResponseEntity.ok(resp);
     }
 
     @PutMapping(value = "/addbook")
-    public ResponseEntity<String> insert(@RequestBody Blog blog)
+    public ResponseEntity<String> addBook(@RequestBody BookCriteria book)
     {
-        //Blog b = new Blog(Blogmodel.getTitle(), Blogmodel.getBody());
-        blogService.saveOrUpdateBlog(blog);
-        return ResponseEntity.ok("Ok");
+        System.out.println("received object"+book.toString());
+        Book b = new Book(book.getIsbn(), book.getTitle(), book.getPagenbr() );
+        System.out.println("b object"+b.toString());
+        bookService.saveOrUpdateBook(b);
+        return ResponseEntity.ok("Insert successfull");
     }
     
     @DeleteMapping(value = "/deletebook/{id}")
-    public void deleteBlog(@PathVariable String id) {
-        blogService.deleteBlog(id);
+    public void deleteBook(@PathVariable String id) {
+        bookService.deleteBook(id);
     }
 }

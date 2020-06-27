@@ -6,7 +6,7 @@
 package com.biblio.repository.Es;
 
 
-import com.biblio.models.BlogEs;
+import com.biblio.models.BookEs;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Page;
 
@@ -18,8 +18,10 @@ import org.springframework.stereotype.Repository;
  * @author nafar
  */
 @Repository
-public interface BlogEsRepository extends ElasticsearchRepository<BlogEs, String> {
+public interface BookEsRepository extends ElasticsearchRepository<BookEs, String> {
     
-    Page<BlogEs> findByTitle(String name, Pageable pageable);
+    Page<BookEs> findByTitle(String title, Pageable pageable);
+    
+    Page<BookEs> findByIsbn(String isbn, Pageable pageable);
     
 }

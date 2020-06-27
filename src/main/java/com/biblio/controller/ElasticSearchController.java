@@ -1,8 +1,8 @@
 package com.biblio.controller;
 
-import com.biblio.models.BlogEs;
-import com.biblio.service.BlogEsService;
-import com.biblio.service.BlogService;
+import com.biblio.models.BookEs;
+import com.biblio.service.BookEsService;
+import com.biblio.service.BookService;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,16 +21,16 @@ import org.springframework.web.server.ResponseStatusException;
 public class ElasticSearchController {
    
     @Autowired
-    private BlogEsService blogEsService;
+    private BookEsService bookEsService;
 
-    @GetMapping("/blogs")
+    @GetMapping("/books")
     public HttpEntity<String> findAll(){
         
         String resp=new String();
  
-        Iterable<BlogEs> blogs = blogEsService.findAll();
+        Iterable<BookEs> books = bookEsService.findAll();
         
-        for (BlogEs customer : blogs) {
+        for (BookEs customer : books) {
                     resp+=customer;
                 }
         return ResponseEntity.ok(resp);
@@ -39,7 +39,7 @@ public class ElasticSearchController {
     @GetMapping("/findbyid/{id}")
     public String findById(@PathVariable("id") String id)
     {
-        BlogEs b = blogEsService.findOne(id);
+        BookEs b = bookEsService.findOne(id);
         if(b == null){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Blog with id "+id+" not found in ES cluster");	        
         }
@@ -53,27 +53,12 @@ public class ElasticSearchController {
     {
         String resp=new String();
         
-        Page<BlogEs> b = blogEsService.findByTitle(title, PageRequest.of(0, 5000));
-        List<BlogEs> listBlogs = b.getContent();
-        for (BlogEs customer : listBlogs) {
+        Page<BookEs> b = bookEsService.findByTitle(title, PageRequest.of(0, 5000));
+        List<BookEs> listBlogs = b.getContent();
+        for (BookEs customer : listBlogs) {
                     resp+=customer;
                 }
         return ResponseEntity.ok(resp);
     }
     
-
-    @PutMapping(value = "/insert")
-    public HttpEntity<String> save(@Valid BlogCriteria Blogmodel)
-    {
-        BlogEs b = new BlogEs(Blogmodel.getTitle(), Blogmodel.getBody());
-        b = blogEsService.save(b);
-
-        return ResponseEntity.ok(b.toString());
-    }
-    
-    
-    @DeleteMapping(value = "/dltById/{id}")
-    public void deleteBlog(@PathVariable String id) {
-        blogEsService.deleteById(id);
-    }
-}
+ }
